@@ -1,13 +1,14 @@
 const http = require("http");
 const productsController = require("./controllers/product.controller");
+const ErrorHandler = require("./controllers/errorHandler.controlle");
 const PORT = 3001;
 const server = http.createServer((req, res) => {
   if (req.url == "/api/products") {
     productsController.get(req, res);
+  } else if (req.url.match(/\/api\/products\/[0-9]+/)) {
+    productsController.getById(req, res);
   } else {
-    res.writeHead(404, { "content-type": "application/json" });
-    res.write(JSON.stringify({ message: "Route Not Found" }));
-    res.end();
+    ErrorHandler.notFound(res);
   }
 });
 
