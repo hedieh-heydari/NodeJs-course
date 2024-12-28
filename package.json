@@ -4,8 +4,8 @@
   "description": "just learning nodejs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -17,5 +17,8 @@
     "url": "https://github.com/hedieh-heydari/NodeJs-course/issues"
   },
   "homepage": "https://github.com/hedieh-heydari/NodeJs-course#readme",
-  "keywords": []
+  "keywords": [],
+  "dependencies": {
+    "nodemon": "^3.1.9"
+  }
 }
